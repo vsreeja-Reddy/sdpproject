@@ -1,0 +1,171 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+    <style>
+        /* CSS styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .info-message {
+            background-color: #ffc107;
+            color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        /* Hide QR code and UPI ID input by default */
+        #qrCode {
+            display: none;
+        }
+
+        #upiIdInput {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+{% block body %}
+<hr class="mt-0">
+<div class="container-fluid" id="home">
+
+
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Contact Form -->
+            {% csrf_token %}
+            <form id="contact-form" class="form-horizontal" role="form">
+                <div class="input-group">
+                    <label>Name</label>
+                    <input type="text" name="name" placeholder="Name">
+                </div>
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="Email">
+                </div>
+                <div class="input-group">
+                    <label>Phone Number</label>
+                    <input type="text" name="phone" placeholder="xxxxxxxxxxx">
+                </div>
+                 <div class="half-box currency-box" style="width: 70%; margin-up:20px;" >
+                    <h3 style="margin-right:10px;"> Payment Option :</h3>
+                    <select name="currency" id="currency" style="width:500px; padding:10px; ">
+                        <option value="Fruits">Fruits:₹300</option>
+                        <option value="Medicine">Medicine:₹500</option>
+                        <option value="Clothes">Clothes:₹10000</option>
+                        <option value="Food">Food:₹30000</option>
+                        <option value="Shelter">Shelter:₹40000</option>
+                        <option value="All">All:₹4000006</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Payment Method</label><br>
+                    <input type="radio" id="qr" name="payment" value="QR">
+                    <label for="qr">QR</label><br>
+                    <input type="radio" id="upi" name="payment" value="UPI">
+                    <label for="upi">UPI ID</label><br>
+                </div>
+                <div id="qrCode">
+                    <!-- Placeholder for QR code image -->
+                    <img src="{% static 'images/qr.jpg' %}" alt="QR Code" id="qrImage" style="width:500px; height:500px; padding:20px;">
+                </div>
+                <div id="upiIdInput">
+                    <label>UPI ID</label>
+                    <input type="text" name="upi_id" placeholder="Enter your UPI ID">
+                </div>
+                <a href="/pay">
+                    <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">Pay</button>
+                </a>
+            </form>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+<!-- JavaScript to handle QR code and UPI ID input display -->
+<script>
+    // Function to show/hide QR code and UPI ID input based on payment method selection
+    function togglePaymentOptions() {
+        var qrCodeDiv = document.getElementById("qrCode");
+        var upiIdInput = document.getElementById("upiIdInput");
+
+        if (document.getElementById("qr").checked) {
+            qrCodeDiv.style.display = "block"; // Show QR code
+            upiIdInput.style.display = "none"; // Hide UPI ID input
+
+            // Hide QR code after 1 minute
+            setTimeout(function() {
+                qrCodeDiv.style.display = "none";
+            }, 60000); // 60000 milliseconds = 1 minute
+        } else if (document.getElementById("upi").checked) {
+            qrCodeDiv.style.display = "none"; // Hide QR code
+            upiIdInput.style.display = "block"; // Show UPI ID input
+        }
+    }
+
+    // Add event listeners to payment method radio buttons
+    document.getElementById("qr").addEventListener("change", togglePaymentOptions);
+    document.getElementById("upi").addEventListener("change", togglePaymentOptions);
+
+    // Call togglePaymentOptions initially to ensure correct initial state
+    togglePaymentOptions();
+</script>
+</body>
+</html>

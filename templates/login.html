@@ -1,0 +1,36 @@
+
+{% load static %}
+<html>
+<head>
+    <title>LOGIN</title>
+</head>
+<body>
+{% block body %}
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags %}
+                <script>alert("{{ message }}")</script>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    <div class="container" style="display: flex; justify-content: center; align-items: center; height: 80vh;">
+        <div class="form-container" style="width: 400px; padding: 20px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9;">
+            <h1 style="margin-bottom: 20px; text-align: center; color: #333;">LOGIN</h1>
+            <form method="post" action="{% url 'login1' %}" style="text-align: center;">
+                {% csrf_token %}
+                <div class="input-group" style="margin-bottom: 15px;">
+                    <label style="font-weight: bold; display: block;">Username</label>
+                    <input type="text" name="username" placeholder="" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                </div>
+                <div class="input-group" style="margin-bottom: 15px;">
+                    <label style="font-weight: bold; display: block;">Password</label>
+                    <input type="password" name="password" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                </div>
+                <button type="submit" name="SUBMIT" style="background-color: #007bff; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">SUBMIT</button>
+            </form>
+            <p style="margin-left:20px">Not registered yet? <a href="{% url 'signup' %}" style="margin-left:0px;text-decoration:none">Signup</a></p>
+        </div>
+    </div>
+{% endblock %}
+</body>
+</html>

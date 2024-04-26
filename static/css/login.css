@@ -1,0 +1,51 @@
+/* static/css/login.css */
+
+.container1 {
+    width: 400px;
+    margin: auto;
+    margin-top: 100px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9; /* Background color for the container */
+}
+
+.bodycontainer {
+    text-align: center;
+}
+
+.bodycontainer h1 {
+    margin-bottom: 20px;
+    color: #333; /* Color for the heading */
+}
+
+.bodycontainer label {
+    font-weight: bold;
+    display: block; /* Ensure labels are displayed as blocks for proper spacing */
+}
+
+.bodycontainer input[type="text"],
+.bodycontainer input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.bodycontainer button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.bodycontainer button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    color: red; /* Color for error messages */
+}

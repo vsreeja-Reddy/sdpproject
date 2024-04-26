@@ -1,0 +1,116 @@
+{% extends 'projectnavbar.html'%}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Welfare Donation</title>
+    <style>
+        /* CSS styles */
+        .container {
+            display: flex;
+            align-items: center;
+            margin: 20px;
+        }
+        .image {
+            flex: 1;
+            margin-right: 20px;
+        }
+        .image img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .text {
+            flex: 2;
+        }
+        .text p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+{% block body %}
+    <div class="container">
+        <!-- Image Section -->
+        <center>
+        <div class="image">
+            <img class="img-fluid rounded" src="https://www.shutterstock.com/image-photo/young-woman-worker-choosing-which-600nw-1651262620.jpg" alt="Animal Welfare" width="800px;height:"500">
+        </div>
+            </center>
+
+        <!-- Text Section -->
+        <div class="text">
+            <p>Join Hands With Vidit To Give Food And Fresh Water To Thousands Of Strays This Summer. Save A Stray, a Noida-based NGO, is on a mission to reach out to over 3500+  dogs across Noida and Delhi. This Summer, their main goal is to provide water bowls and  food to stray dogs. Every donation you make will save a life.Animal donation plays a crucial <br> role in supporting the welfare and well-being of animals in need. Whether it's providing food, shelter, medical care, or adoption services, every donation contributes to making a positive impact on the lives of animals. By donating to animal welfare organizations, individuals can help rescue neglected, abused, or abandoned animals, provide them with necessary medical treatment, and offer them a chance for a better life. From sponsoring the care of individual animals to supporting broader initiatives aimed at protecting endangered species and preserving habitats, animal donation enables compassionate individuals to make a meaningful difference in the lives of our furry, feathered, and finned friends."</p>
+        </div>
+
+
+           </div>
+
+
+    </div>
+<center>
+    <div class="product-list"style="display:flex;flex_direction:row;margin-left:110px;">
+        <div class="product-item">
+
+            <img src="https://thumbs.dreamstime.com/b/fruit-vegetables-7134858.jpg" alt="Fruit Kit" width="200" height="150">
+            <h3>Fruit Kit</h3>
+            <p>Atta 16Kg</p>
+            <p>₹560/unit</p>
+
+        </div>
+
+        <div class="product-item">
+            <img src="https://www.ayurvet.com/wp-content/uploads/2020/12/Slider-41.jpg" alt="Medicine" width="200" height="150">
+
+            <h3>Medicine</h3>
+            <p>₹565/unit</p>
+
+        </div>
+
+        <div class="product-item">
+            <img src="https://www.bigbasket.com/media/uploads/p/xxl/40302337_1-pehle-jaisa-black-chana-raw.jpg" alt="Black Chana" width="200" height="150">
+
+            <h3>Black Chana</h3>
+            <p>₹100/kg</p>
+
+        </div>
+        <!-- Add more product items here -->
+        <div class="product-item">
+             <img src="https://www.dairyglobal.net/app/uploads/2021/12/IMG_mpv401033-010-848x565.jpg" alt="Grass and Forage"width="200" height="150">
+
+            <h3>Grass and Forage</h3>
+            <p>₹50/kg</p>
+
+        </div>
+        <div class="product-item">
+             <img src="https://www.akc.org/wp-content/uploads/2013/07/Dogue-de-Bordeaux-puppies-eating-from-one-dish.jpeg" alt="Meat"width="200" height="150">
+            <h3>Meat</h3>
+            <p>₹200/kg</p>
+
+        </div>
+        <div class="product-item">
+            <img src="https://www.scoular.com/wp-content/uploads/2020/10/Ancient-Grains.jpg" alt="Grains and Seeds"width="200" height="150">
+            <h3>Grains and Seeds</h3>
+            <p>₹80/kg</p>
+
+        </div>
+    </div>
+</div>
+    </center>
+<center>
+ <div class="error" id="paymentModeErr"></div>
+    <a href="/contact1">
+<button id="nextButton" class="btn btn-primary btnstyle">NEXT</button>
+    </a>
+        <!-- Add an id to the button for easier targeting -->
+<input id="u" type="hidden" name="url" value="no value">
+<input type="hidden" name="activetab" id="activetab">
+
+    </div>
+</div>
+</center>
+{% endblock %}
+</body>
+</html>

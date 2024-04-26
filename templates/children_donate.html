@@ -1,0 +1,120 @@
+{% extends 'projectnavbar.html'%}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Welfare Donation</title>
+    <style>
+        /* CSS styles */
+        .container {
+            display: flex;
+            align-items: center;
+            margin: 20px;
+        }
+        .image {
+            flex: 1;
+            margin-right: 20px;
+        }
+        .image img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .text {
+            flex: 2;
+        }
+        .text p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+{% block body %}
+    <div class="container">
+        <!-- Image Section -->
+        <center>
+        <div class="image">
+            <img class="img-fluid rounded" src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTd8MTExNjUzNHx8ZW58MHx8fHx8" alt="Animal Welfare" width="800px;height:"500">
+        </div>
+            </center>
+
+        <!-- Text Section -->
+        <div class="text">
+            <p>Children are often at the heart of charitable endeavors, as they represent the future and are among the most vulnerable members of society. Supporting children in charity involves a range of efforts aimed at ensuring their well-being, health, education, and overall development. These initiatives may include providing access to nutritious food, clean water, and healthcare services to ensure children grow up healthy and strong. Education is another key focus area, with charities working to provide quality schooling, educational resources, and opportunities for children to learn and develop essential skills. Additionally, charities often address the specific needs of marginalized or disadvantaged children, such as those living in poverty, refugees, or those affected by conflict or natural disasters. By investing in children's welfare and education, charities not only improve the lives of individual children but also contribute to building a brighter and more equitable future for communities and societies as a whole.
+
+
+
+</p>
+        </div>
+
+
+           </div>
+
+
+    </div>
+<center>
+    <div class="product-list"style="display:flex;flex_direction:row;margin-left:110px;">
+        <div class="product-item">
+
+            <img src="https://cdn.firstcry.com/education/2022/11/06094158/Toy-Names-For-Kids.jpg" alt="Fruit Kit" width="200" height="150">
+            <h3>Toys and Games</h3>
+
+            <p>₹1560</p>
+
+        </div>
+
+        <div class="product-item">
+            <img src="https://i0.wp.com/calmatters.org/wp-content/uploads/2023/08/080123-Flavored-Medicine-GH-REUTERS-CM.jpg?fit=1200%2C785&ssl=1" alt="Medicine" width="200" height="150">
+
+            <h3>Medicines</h3>
+            <p>₹2500</p>
+
+        </div>
+
+        <div class="product-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh60IgeOY9Lzq-n8LMNNMFMTWiNNjnKxbtCNEb0_PzLw&s" alt="Black Chana" width="200" height="150">
+
+            <h3>Clothes</h3>
+            <p>₹2000</p>
+
+        </div>
+        <!-- Add more product items here -->
+        <div class="product-item">
+             <img src="https://parade.com/.image/t_share/MTkwNTgxMjkxNjk3NTc5OTAw/istock-1203599963-jpg.jpg" alt="Grass and Forage"width="200" height="150">
+
+            <h3>Food</h3>
+            <p>₹50/kg</p>
+
+        </div>
+        <div class="product-item">
+             <img src="https://www.raymondgeddes.com/cdn/shop/articles/iStock-1311273895_1.jpg?v=1682319188" alt="Meat"width="200" height="150">
+            <h3>School Supplies</h3>
+            <p>₹200</p>
+
+        </div>
+        <div class="product-item">
+            <img src="https://as1.ftcdn.net/v2/jpg/04/24/59/80/1000_F_424598058_nTuLgoS0xhMeyKlsxHS9g2RCaN7A0ODd.jpg" alt="Grains and Seeds"width="200" height="150">
+            <h3>Hygiene Products</h3>
+            <p>₹800</p>
+
+        </div>
+    </div>
+</div>
+    </center>
+<center>
+ <div class="error" id="paymentModeErr"></div>
+    <a href="/contact1">
+<button id="nextButton" class="btn btn-primary btnstyle">NEXT</button>
+    </a>
+        <!-- Add an id to the button for easier targeting -->
+<input id="u" type="hidden" name="url" value="no value">
+<input type="hidden" name="activetab" id="activetab">
+
+    </div>
+</div>
+</center>
+{% endblock %}
+</body>
+</html>

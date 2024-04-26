@@ -1,0 +1,65 @@
+{% extends 'projectnavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+</head>
+<body>
+{% block body %}
+<hr class="mt-0">
+<div class="container-fluid" id="home">
+
+        <div class="col-lg-6 pl-5">
+            <img class="" width="1250" height="500" src="{% static 'images/contact.jpeg' %}" style="margin-right:10px;">
+        </div>
+    </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Contact Form -->
+              <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit Feedback</button>
+    </form>
+        </div>
+        <div class="col-md-6">
+            <!-- Contact Information -->
+            <div class="contact-info" style="margin-bottom: 20px; margin-left:90px;">
+                <h2 style="font-size: 20px; margin-bottom: 10px;">About Us</h2>
+                <p style="font-size: 16px;">[Describe your organization's mission statement here]</p>
+
+                <h2>Contact Information</h2>
+                <ul style="list-style-type: none; padding: 0; font-size: 16px; margin-bottom: 5px;">
+                    <li style="font-size: 16px; margin-bottom: 5px;">Phone: 00000000</li>
+                    <li style="font-size: 16px; margin-bottom: 5px;">Email: donorhub@gmail.com</li>
+                    <li style="font-size: 16px; margin-bottom: 5px;">Address: Kluniversity</li>
+                </ul>
+<!--                &lt;!&ndash; Instagram icon &ndash;&gt;-->
+<!--                <img src="{% static 'images/ins.jpeg' %}" alt="Instagram" style="width: 20px; height: 20px; margin-right: 5px;">-->
+                <a href="https://www.instagram.com/?hl=en" target="_blank">
+    <img src="{% static 'images/ins.jpeg' %}" alt="Instagram" style="width: 40px; height: 40px; margin-right: 5px;">
+</a>
+                <!-- Telegram icon -->
+                    <a href="https://t.me/+DILwns41-aI3ZTE9" target="_blank">
+                <img src="{% static 'images/tel.png' %}" alt="Telegram" style="width: 40px; height: 40px; margin-right:5px;">
+                    </a>
+            </div>
+
+            <!-- Links -->
+            <div class="links" style="margin-top: 20px;margin-left:90px;">
+                <h2 style="font-size: 20px; margin-bottom: 10px;">Links</h2>
+                <ul style="list-style-type: none; padding: 0; font-size: 16px; margin-bottom: 5px;">
+                    <li style="font-size: 16px; margin-bottom: 5px;"><a href="{% url 'aboutus' %}">About Us</a></li>
+                    <li style="font-size: 16px; margin-bottom: 5px;"><a href="{% url 'donate' %}">How It Works</a></li>
+                    <li style="font-size: 16px; margin-bottom: 5px;"><a href="{% url 'donate' %}">Donate</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,116 @@
+{% extends 'projectnavbar.html'%}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Welfare Donation</title>
+    <style>
+        /* CSS styles */
+        .container {
+            display: flex;
+            align-items: center;
+            margin: 20px;
+        }
+        .image {
+            flex: 1;
+            margin-right: 20px;
+        }
+        .image img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .text {
+            flex: 2;
+        }
+        .text p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+{% block body %}
+    <div class="container">
+        <!-- Image Section -->
+        <center>
+        <div class="image">
+            <img class="img-fluid rounded" src="https://img.buzzfeed.com/buzzfeed-static/static/2017-11/9/0/asset/buzzfeed-prod-fastlane-03/sub-buzz-16853-1510204903-2.jpg?downsize=700%3A%2A&output-quality=auto&output-format=auto" alt="Animal Welfare" width="800px;height:"500">
+        </div>
+            </center>
+
+        <!-- Text Section -->
+        <div class="text">
+            <p>Join Hands With Vidit To Give Food And Fresh Water To Thousands Of Strays This Summer. Save A Stray, a Noida-based NGO, is on a mission to reach out to over 3500+  dogs across Noida and Delhi. This Summer, their main goal is to provide water bowls and  food to stray dogs. Every donation you make will save a life.Animal donation plays a crucial <br> role in supporting the welfare and well-being of animals in need. Whether it's providing food, shelter, medical care, or adoption services, every donation contributes to making a positive impact on the lives of animals. By donating to animal welfare organizations, individuals can help rescue neglected, abused, or abandoned animals, provide them with necessary medical treatment, and offer them a chance for a better life. From sponsoring the care of individual animals to supporting broader initiatives aimed at protecting endangered species and preserving habitats, animal donation enables compassionate individuals to make a meaningful difference in the lives of our furry, feathered, and finned friends."</p>
+        </div>
+
+
+           </div>
+
+
+    </div>
+<center>
+    <div class="product-list"style="display:flex;flex_direction:row;margin-left:110px;">
+        <div class="product-item">
+
+            <img src="https://5.imimg.com/data5/MG/FQ/SA/SELLER-283756/all-fmcg-grocery-products.jpg" alt="Fruit Kit" width="200" height="150">
+            <h3>Grocery Kit</h3>
+
+            <p>₹625/unit</p>
+
+        </div>
+
+        <div class="product-item">
+            <img src="https://www.bigbasket.com/media/uploads/p/l/10000459_13-bb-royal-refined-sugar-sulphurless.jpg" alt="Medicine" width="200" height="150">
+
+            <h3>Sugar</h3>
+            <p>₹525/unit</p>
+
+        </div>
+
+        <div class="product-item">
+            <img src="https://5.imimg.com/data5/UB/WG/JK/SELLER-98634555/brown-plain-industrial-jute-sack-bag.jpg" alt="Black Chana" width="200" height="150">
+
+            <h3>Rice 10kg</h3>
+            <p>₹550/unit</p>
+
+        </div>
+        <!-- Add more product items here -->
+        <div class="product-item">
+             <img src="https://m.media-amazon.com/images/I/61tiSCGXepL._AC_UF894,1000_QL80_.jpg" alt="Grass and Forage"width="200" height="150">
+
+            <h3>Masoor Dal</h3>
+            <p>₹500/unit</p>
+
+        </div>
+        <div class="product-item">
+             <img src="https://www.bigbasket.com/media/uploads/p/l/40125386_7-tata-sampann-unpolished-kabuli-chana.jpg" alt="Meat"width="200" height="150">
+            <h3>Kabuli chana</h3>
+            <p>₹580/unit</p>
+
+        </div>
+        <div class="product-item">
+            <img src="https://images.indianexpress.com/2021/01/whole-grains_1200_getty.jpg" alt="Grains and Seeds"width="200" height="150">
+            <h3>Grains and Seeds</h3>
+            <p>₹80/kg</p>
+
+        </div>
+    </div>
+</div>
+    </center>
+<center>
+ <div class="error" id="paymentModeErr"></div>
+    <a href="/contact1">
+<button id="nextButton" class="btn btn-primary btnstyle">NEXT</button>
+    </a>
+        <!-- Add an id to the button for easier targeting -->
+<input id="u" type="hidden" name="url" value="no value">
+<input type="hidden" name="activetab" id="activetab">
+
+    </div>
+</div>
+</center>
+{% endblock %}
+</body>
+</html>

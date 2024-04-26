@@ -1,0 +1,157 @@
+{% extends 'projectnavbar.html'%}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Home Page</title>
+</head>
+<body>
+{% block body %}
+<hr class="mt-0">
+<div class="container-fluid" id="home">
+    <div class="row mb-5">
+        <div class="col-lg-6">
+            <p class="text-center pt-3 mb-8" style="color:red; font-size:35px">Reduce Wastage Of Needy Items</p>
+            <h3 class="px-5 pt-3" style="color:green">
+                Help others without any reason and give without the expectation of receive anything in return
+            </h3>
+            <h3  class="px-5 pt-3" style="color:blue">Always give without remembering and always receive without forgetting</h3>
+            <div class="px-5 pt-3">
+                <a href="{% url 'aboutus' %}" class="btn btn-success">Read More <i class ="fas fa-angle-double-right"></i></a>
+                <a href="{% url 'donate' %}"class="btn btn-primary">Donate Now <i class ="fas fa-angle-double-right"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-6 pl-5">
+            <img class="" width="700" height="500" src="{% static 'images/home.png' %}">
+        </div>
+    </div>
+</div>
+<div class="card mb-3" style="max-width: 1000px;margin-left:80px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{% static 'images/sreeja.jpeg' %}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Make A Difference Every Month</h5>
+        <p class="card-text">With our Social Investment Plan, you can now be a changemaker every month, and help uplift and empower those who are suffering.</p>
+
+          <button type="button" class="btn btn-primary mr-2">Donate Monthly Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <img src="{% static 'images/Help.webp' %}" height="300" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text"><strong>Help Shankar Feed Healthy Meals To 400+ Mentally Disabled Residents Of His Ashramam.</strong></p>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <span class="badge rounded-circle bg-secondary mr-2">BY</span>
+                        <span>Amma Nanna Anadha Ashramam</span>
+                    </div>
+                    <div class="mt-3"> <!-- Add spacing between the text and buttons -->
+                        <button type="button" class="btn btn-primary mr-2" data-bs-toggle="modal" data-bs-target="#shareModal">Share</button>
+
+                        <a href="{% url 'animal_donate' %}" class="btn btn-secondary">Donate</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <img src="{% static 'images/d1.webp' %}" height="300" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text"><strong>This Man Is Wiping The Tears Of Countless Elderly People In Pain, Help Him Save Many Moreong</strong></p>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <span class="badge rounded-circle bg-secondary mr-2">BY</span>
+                        <span>Empowering Their Children</span>
+                    </div>
+                    <div class="mt-3">
+                        <button type="button" class="btn btn-primary mr-2" data-bs-toggle="modal" data-bs-target="#shareModal">Share</button>
+                        <button type="button" class="btn btn-secondary">Donate</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- View More Button and Hidden Cards -->
+<div class="container" id="moreCardsContainer" style="display: none;">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4">
+                 <div class="card mb-4">
+                <img src="{% static 'images/e2.webp' %}" height="300" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text"><strong>These Kids Deserve The Chance To Live A Better Life, Help Just Sports arena Federation Educate Them
+Tax Benefit
+i
+Education</strong></p>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <span class="badge rounded-circle bg-secondary mr-2">BY</span>
+                        <span>Amma Nanna Anadha Ashramam</span>
+                    </div>
+                    <div class="mt-3">
+
+                        <button type="button" class="btn btn-primary mr-2" data-bs-toggle="modal" data-bs-target="#shareModal">Share</button>
+
+
+                        <button type="button" class="btn btn-secondary">Donate</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </div>
+
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <img src="{% static 'images/di1.webp' %}" height="300" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text"><strong>Support Hope Welfare Trust To Uplift Countless People With Disabilities In UP
+</strong></p>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <span class="badge rounded-circle bg-secondary mr-2">BY</span>
+                        <span>Amma Nanna Anadha Ashramam</span>
+                    </div>
+                    <div class="mt-3">
+                                                <button type="button" class="btn btn-primary mr-2" data-bs-toggle="modal" data-bs-target="#shareModal">Share</button>
+
+
+                        <button type="button" class="btn btn-secondary">Donate</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<button id="viewMoreButton" class="btn btn-primary mx-auto d-block">View More</button>
+
+<script>
+document.getElementById("viewMoreButton").addEventListener("click", function() {
+    var moreCardsContainer = document.getElementById("moreCardsContainer");
+    if (moreCardsContainer.style.display === "none") {
+        moreCardsContainer.style.display = "block";
+        document.getElementById("viewMoreButton").innerText = "View Less";
+    } else {
+        moreCardsContainer.style.display = "none";
+        document.getElementById("viewMoreButton").innerText = "View More";
+    }
+});
+</script>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate</title>
+    <style>
+        html {
+            background: Slateblue;
+            box-sizing: border-box;
+        }
+
+        * {
+            box-sizing: inherit;
+        }
+
+        body {
+            background: white;
+            width: 90%;
+            max-width: 800px;
+            margin: 50px auto;
+            font-family: Calibri, Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1,
+        p {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin: 1em 0 .2em;
+        }
+
+        /* single-line text, checkbox, and button */
+        input,
+        select,
+        textarea {
+            display: block;
+            width: 100%;
+            padding: .3em;
+            font-size: 20px;
+            background-color: #fbfbfb;
+            border: solid 1px #CCC;
+            resize: vertical;
+        }
+
+        textarea {
+            min-height: 180px;
+        }
+
+        select {
+            color: indigo;
+        }
+
+        option {
+            color: blue;
+            background: lavenderBlush;
+        }
+
+        input[type=checkbox] {
+            display: inline;
+            width: auto;
+            color: red;
+        }
+
+        /* Donate Now button styling */
+        input[type=submit] {
+            background: lightcoral;
+            margin: 1em auto 0; /* Center the button horizontally */
+            display: block; /* Ensure button takes full width */
+            width: fit-content; /* Adjust button width to its content */
+            padding: 10px 20px; /* Add padding to the button */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            transition: all .3s ease-out;
+            cursor: pointer; /* Add cursor pointer on hover */
+        }
+
+        /* Hover and focus states */
+        input[type=submit]:hover,
+        input[type=submit]:focus {
+            background: lightgreen;
+            outline: none;
+        }
+
+        input:focus,
+        input:hover,
+        select:focus,
+        select:hover,
+        textarea:focus,
+        textarea:hover {
+            background: lavenderBlush;
+        }
+
+        @media screen and (min-width: 600px) {
+            /*  make the form 2 columns */
+            form:after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+            .column {
+                width: 50%;
+                padding: 1em;
+                float: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Donate to Support Our Cause</h1>
+    </header>
+
+    <main>
+        <form action="{% url 'process_donation' %}" method="post">
+            {% csrf_token %}
+
+            <div class="column">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Mobile Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="3" cols="30"></textarea>
+
+            </div>
+
+            <div class="column">
+                <label for="address">Message:</label>
+                <textarea id="address" name="address" rows="4" cols="50"></textarea>
+
+                <label for="donation-amount">Amount to Donate:</label>
+                <input type="number" id="donation-amount" name="donation-amount" min="1" required>
+
+                <label for="donation-frequency">How often would you like to donate?</label>
+                <select id="donation-frequency" name="donation-frequency">
+                    <option value="once">Once</option>
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                </select>
+            </div>
+
+           <button type="submit">Donate Now</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>Contact us at: example@example.com</p>
+    </footer>
+</body>
+</html>

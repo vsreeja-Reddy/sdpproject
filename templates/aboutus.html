@@ -1,0 +1,38 @@
+{% extends 'projectnavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Home Page</title>
+</head>
+<body>
+{% block body %}
+<hr class="mt-0">
+<div class="container-fluid" id="about">
+    <div class="row">
+        <div class="col-lg-6">
+            <img class="img-fluid" src="{% static 'images/download.jpeg' %}" alt="About Us Image" style="width:600px; height:500px;">
+        </div>
+        <div class="col-lg-6">
+            <h2 class="text-center pt- mb-0 text-secondary" style="font-size: 36px;">About Us</h2>
+            <p class="text-center pt-3 mb-5" style="font-size: 20px;">
+                Welcome to Donor Hub, where generosity meets compassion!
+            </p>
+            <p class="text-justify mb-5" style="font-size: 18px;">
+                At Donor Hub, we believe in the power of giving. Our platform provides a unique opportunity for donors to make a positive impact in the lives of those in need. Whether it's donating clothing, food, or educational supplies, every contribution matters.
+            </p>
+            <p class="text-justify mb-5" style="font-size: 18px;">
+                Our mission is simple: to bridge the gap between abundance and scarcity, to connect those with resources to those in need, and to spread kindness and hope to communities far and wide.
+            </p>
+            <p class="text-justify mb-5" style="font-size: 18px;">
+                Join us in our journey to create a world where no one is left behind, where empathy and generosity reign supreme. Together, we can make a difference!
+            </p>
+            <div class="text-center">
+                <a href="{% url 'donate' %}" class="btn btn-primary btn-lg">Donate Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>
